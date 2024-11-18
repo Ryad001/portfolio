@@ -7,7 +7,7 @@
   <style>
     body {
       background-color: #000;
-      color: #0ff;
+      color: #fff;
       font-family: 'Courier New', Courier, monospace;
       display: flex;
       justify-content: center;
@@ -16,11 +16,14 @@
       height: 100vh;
       margin: 0;
       text-align: center;
+      position: relative;
+      overflow: hidden;
     }
     h1 {
       font-size: 3em;
       color: #f0f;
       text-shadow: 0 0 10px #f0f, 0 0 20px #f0f;
+      margin-top: 0;
     }
     h2, p {
       text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
@@ -28,21 +31,34 @@
     .services {
       margin: 20px 0;
       text-align: left;
+      padding: 0 10%;
     }
     .contact-info {
       margin-top: 30px;
     }
     a {
-      color: #f0f;
+      color: #0ff;
       text-decoration: none;
       font-weight: bold;
     }
     a:hover {
       text-shadow: 0 0 5px #ff0, 0 0 10px #ff0;
     }
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.2;
+      background: url('https://source.unsplash.com/1600x900/?cyberpunk') no-repeat center center/cover;
+    }
   </style>
 </head>
 <body>
+  <div class="background"></div>
+  
   <h1>Under Construction</h1>
   <h2>Ryad Amghar</h2>
   <p>Creating a new experience. Please check back soon!</p>
