@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
   <title>Website Under Construction</title>
   <style>
     body {
@@ -13,76 +15,307 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      height: 100vh;
+      height: fit-content; /* Use full viewport height */
+      width: 100%;
       margin: 0;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
+      padding: 20px;
+      box-sizing: border-box;
     }
+
     h1 {
       font-size: 3em;
-      color: #f0f;
-      text-shadow: 0 0 10px #f0f, 0 0 20px #f0f;
-      margin-top: 0;
+      color: #fff;
     }
-    h2, p {
-      text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
-    }
-    .services {
+
+    .services, .contact-info {
       margin: 20px 0;
       text-align: left;
       padding: 0 10%;
     }
-    .contact-info {
-      margin-top: 30px;
-    }
+
     a {
-      color: #0ff;
+      color: white;
       text-decoration: none;
       font-weight: bold;
     }
-    a:hover {
-      text-shadow: 0 0 5px #ff0, 0 0 10px #ff0;
+
+    .buttons {
+      margin: 20px;
     }
-    .background {
+
+    .translate-btn {
+      background-color: transparent;
+      border: none;
+      color: #ffffff;
+      padding: 10px 20px;
+      margin: 5px;
+      cursor: pointer;
+      font-size: 1em;
+      font-weight: bold;
+      border-radius: 5px;
+      border: solid 1px white;
+      transition: background-color .5s, color .5s;
+    }
+
+    .translate-btn:hover {
+      background-color: white;
+      color: black;
+    }
+
+    .shape, .shape2 {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      background-color: rgb(255, 255, 255);
+      transition: all .3s ease-in-out;
+      animation: blob 120s infinite ease-in-out;
+    }
+
+    .shape {
+      top: -100px;
+      left: -80px;
+      width: 700px;
+      height: 700px;
+      border-radius: 30% 70% 70% 30% / 30% 48% 52% 70%;
       z-index: -1;
-      opacity: 0.2;
-      background: url('https://source.unsplash.com/1600x900/?cyberpunk') no-repeat center center/cover;
+    }
+
+    .shape2 {
+      bottom: -100px;
+      right: -80px;
+      width: 500px;
+      height: 500px;
+      border-radius: 37% 63% 30% 70% / 69% 63% 37% 31%  ;
+      z-index: -1;
+
+    }
+
+    @keyframes blob {
+      0% { transform: scale(1); }
+      25% { transform: scale(2); }
+      50% { transform: scale(3); }
+      75% { transform: scale(2); }
+      100% { transform: scale(1); }
+    }
+
+    * {
+      position: relative;
+      z-index: 2;
+      mix-blend-mode: difference;
+    }
+
+    .social-wrapper {
+      position: absolute;
+      top: 8%;
+      left: 48%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      gap: 20px;
+      z-index: 9999;
+    }
+
+    .social-wrapper a {
+      font-size: 40px;
+      color: #ffffff;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .social-wrapper a:hover {
+      transform: scale(1.2);
     }
   </style>
 </head>
 <body>
-  <div class="background"></div>
   
-  <h1>Under Construction</h1>
-  <h2>Ryad Amghar</h2>
-  <p>Creating a new experience. Please check back soon!</p>
-  
-  <div class="services">
-    <h3>Services Offered:</h3>
+
+  <h1 id="header">Under Construction</h1>
+  <h2 id="name">Ryad Amghar</h2>
+  <p id="description">Creating a new experience. Please check back soon!</p>
+  <style>
+  .scroll-down-container {
+      position: fixed;
+      right: 10%;
+      top: 30%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: 100px; /* Ensure enough space for animation */
+      cursor: pointer;
+      z-index: 999999999;
+    }
+
+    .mouse-icon {
+      width: 25px;
+      height: 50px;
+      border: 3px solid #000;
+      border-radius: 20px;
+      position: relative;
+      background-color: #fff;
+    }
+
+    .scroll-wheel {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: scroll 1.5s infinite;
+      background-color: white;
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(-50%) translateY(0);
+      }
+      50% {
+        transform: translateX(-50%) translateY(-10px);
+      }
+      100% {
+        transform: translateX(-50%) translateY(0);
+      }
+    }
+  </style>
+
+  <div class="scroll-down-container" onclick="toggleScroll()">
+    <div class="mouse-icon">
+      <div class="scroll-wheel"></div>
+    </div>
+  </div>
+  <script>
+    function toggleScroll() {
+      // Check if the page is at the top or bottom
+      if (window.scrollY === 0) {
+        // Scroll the page down
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+      } else{
+        // Scroll the page up
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+  </script>
+
+  <div class="social-wrapper">
+    <h1 style="color:black;">@</h1>
+    <a href="https://www.facebook.com/profile.php?id=100084801086715" target="_blank" class="facebook">
+      <i class="fab fa-facebook"></i>
+    </a>
+    <a href="https://www.instagram.com/rya.d.amg/" target="_blank" class="instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/ryad-amghar-0o1/" target="_blank" class="linkedin">
+      <i class="fab fa-linkedin"></i>
+    </a>
+  </div>
+   
+
+  <div class="services" id="services">
+    <h3 >Services Offered:</h3>
     <ul>
       <li>IT Professional Services</li>
       <li>Graphic Design & Business Card Creation</li>
-      <li>Hotel & Flight Reservations, Visa Form Assistance</li>
+      <li>Visa Form Assistance, Hotel & Flight Reservations</li>
+      <li>Creating Professional CVs (ATS-Compatible)</li>
       <li>Computer Repair (Hardware & Software)</li>
       <li>Internet & Modem Configuration</li>
-      <li>USDT Selling on Binance</li>
-      <li>Digital Payment Solutions (Redotpay, Virtual Cards)</li>
+      <li>USDT Selling</li>
+      <li>Digital Payment Solutions (Virtual Cards, Redotpay, Wise ...)</li>
       <li>Web & Desktop Application Development</li>
       <li>Portfolio Website Creation</li>
-      <li>Programming Education for Kids</li>
+      <li>Teacher of Coding, Robotics, Web Development, and Data Structures</li>
     </ul>
   </div>
 
-  <div class="contact-info">
+  <div class="contact-info" id="contact">
     <h3>Contact Me:</h3>
     <p>📞 +213 665230301</p>
     <p>📧 <a href="mailto:amgharryad.dz@gmail.com">amgharryad.dz@gmail.com</a></p>
   </div>
+
+  <div class="buttons">
+    <button class="translate-btn" onclick="translateToEnglish()">English</button>
+    <button class="translate-btn" onclick="translateToFrench()">Français</button>
+    <button class="translate-btn" onclick="translateToArabic()">العربية</button>
+  </div>
+  <div class="shape"></div>
+  <div class="shape2"></div>
+
+  <script>
+    function translateToEnglish() {
+      document.getElementById('header').innerText = 'Under Construction';
+      document.getElementById('description').innerText = 'Creating a new experience. Please check back soon!';
+      document.getElementById('services').innerHTML = `
+        <h3>Services Offered:</h3>
+        <ul>
+          <li>IT Professional Services</li>
+          <li>Graphic Design & Business Card Creation</li>
+          <li>Visa Form Assistance, Hotel & Flight Reservations</li>
+          <li>Creating Professional CVs (ATS-Compatible)</li>
+          <li>Computer Repair (Hardware & Software)</li>
+          <li>Internet & Modem Configuration</li>
+          <li>USDT Selling</li>
+          <li>Digital Payment Solutions (Virtual Cards, Redotpay, Wise ...)</li>
+          <li>Web & Desktop Application Development</li>
+          <li>Portfolio Website Creation</li>
+          <li>Teacher of Coding, Robotics, Web Development, and Data Structures</li>
+        </ul>`;
+      document.getElementById('contact').innerHTML = `
+        <h3>Contact Me:</h3>
+        <p>📞 +213 665230301</p>
+        <p>📧 <a href="mailto:amgharryad.dz@gmail.com">amgharryad.dz@gmail.com</a></p>`;
+    }
+
+    function translateToFrench() {
+      document.getElementById('header').innerText = 'En Construction';
+      document.getElementById('description').innerText = 'Création d\'une nouvelle expérience. Revenez bientôt !';
+      document.getElementById('services').innerHTML = `
+        <h3>Services Offerts :</h3>
+        <ul>
+          <li>Services professionnels en informatique</li>
+          <li>Création graphique et conception de cartes de visite</li>
+          <li>assistance aux formulaires de visa, Réservations d'hôtels et de vols</li>
+          <li>Création de CV professionnels (compatible ATS)</li>
+          <li>Réparation d'ordinateurs (matériel et logiciel)</li>
+          <li>Configuration Internet et modems</li>
+          <li>Vente de USDT</li>
+          <li>Solutions de paiement numérique (cartes virtuelles, Redotpay, Wise ...)</li>
+          <li>Développement d'applications Web et de bureau</li>
+          <li>Création de sites portfolio</li>
+          <li>Enseignant de codage, robotique, développement web et structures de données</li>
+        </ul>`;
+      document.getElementById('contact').innerHTML = `
+        <h3>Contactez-moi :</h3>
+        <p>📞 +213 665230301</p>
+        <p>📧 <a href="mailto:amgharryad.dz@gmail.com">amgharryad.dz@gmail.com</a></p>`;
+    }
+
+    function translateToArabic() {
+      document.getElementById('header').innerText = 'تحت الإنشاء';
+      document.getElementById('description').innerText = 'إنشاء تجربة جديدة. يرجى العودة قريبًا!';
+      document.getElementById('services').innerHTML = `
+        <h3>الخدمات المقدمة:</h3>
+        <ul>
+          <li>خدمات محترفة في تكنولوجيا المعلومات</li>
+          <li>تصميم جرافيك وإنشاء بطاقات العمل</li>
+          <li>مساعدة في نماذج التأشيرات، حجوزات الفنادق والطيران</li>
+          <li>إنشاء سير ذاتية احترافية (متوافقة مع ATS)</li>
+          <li>إصلاح الكمبيوتر (الأجهزة والبرامج)</li>
+          <li>إعداد الإنترنت والمودمات</li>
+          <li>بيع USDT</li>
+          <li>حلول الدفع الرقمي (البطاقات الافتراضية، Redotpay، Wise ...)</li>
+          <li>تطوير تطبيقات الويب وسطح المكتب</li>
+          <li>إنشاء مواقع الويب الشخصية</li>
+          <li>مدرس البرمجة، الروبوتات، تطوير الويب وهياكل البيانات</li>
+        </ul>`;
+      document.getElementById('contact').innerHTML = `
+        <h3>اتصل بي:</h3>
+        <p>📞 +213 665230301</p>
+        <p>📧 <a href="mailto:amgharryad.dz@gmail.com">amgharryad.dz@gmail.com</a></p>`;
+    }
+  </script>
 </body>
 </html>
