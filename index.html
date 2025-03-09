@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+<link rel="stylesheet" href="styles.css">
   <title>Website Under Construction</title>
   <style>
     *{
@@ -107,7 +107,7 @@
 
     .social-wrapper {
       position: absolute;
-      top: 8%;
+      top: 6%;
       left: 48%;
       transform: translateX(-50%);
       display: flex;
@@ -133,7 +133,7 @@
   
 
   <h1 id="header">Under Construction</h1>
-  <h2 id="name">Ryad Amghar</h2>
+  <h2 id="name">Loryd Vemir</h2>
   <p id="description">Creating a new experience. Please check back soon!</p>
   <style>
   .scroll-down-container {
@@ -204,13 +204,13 @@
 
   <div class="social-wrapper">
     <h1 style="color:black;">@</h1>
-    <a href="https://www.facebook.com/profile.php?id=100084801086715" target="_blank" class="facebook">
+    <a href="#NotAvailable" target="_blank" class="facebook">
       <i class="fab fa-facebook"></i>
     </a>
-    <a href="https://www.instagram.com/rya.d.amg/" target="_blank" class="instagram">
+    <a href="https://www.instagram.com/loryd_vemir?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="instagram">
       <i class="fab fa-instagram"></i>
     </a>
-    <a href="https://www.linkedin.com/in/ryad-amghar-0o1/" target="_blank" class="linkedin">
+    <a href="#NotAvailable" target="_blank" class="linkedin">
       <i class="fab fa-linkedin"></i>
     </a>
   </div>
@@ -237,10 +237,40 @@
     </ul>
   </div>
 
+  <div class="software-section">
+    <h2 style="text-align: center;">Available Software</h2>
+
+    <div class="software-container">
+        <div class="software-card important">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="School">
+            <h3>School Management System</h3>
+            <p>Essential for academic and student management.</p>
+        </div>
+
+        <div class="software-card common">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Adobe_Creative_Cloud_rainbow_icon.svg" alt="Adobe">
+            <h3>Adobe Software</h3>
+            <p>Photoshop, Illustrator, Premiere Pro, and more.</p>
+        </div>
+
+        <div class="software-card common">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Autodesk_AutoCAD_logo.svg" alt="AutoCAD">
+            <h3>AutoCAD</h3>
+            <p>For professional 2D and 3D design.</p>
+        </div>
+
+        <div class="software-card common">
+            <img src="https://cdn-icons-png.flaticon.com/512/702/702797.png" alt="Custom">
+            <h3>Software on Demand</h3>
+            <p>Custom tools and apps as per request.</p>
+        </div>
+    </div>
+</div>
+
+
   <div class="contact-info" id="contact">
     <h3>Contact Me:</h3>
-    <p>📞 +213 665230301</p>
-    <p>📧 <a href="mailto:amgharryad.dz@gmail.com">amgharryad.dz@gmail.com</a></p>
+    <p>📧 <a href="mailto:lorydvemir@gmail.com">lorydvemir@gmail.com</a></p>
   </div>
 
   <div class="buttons">
@@ -274,10 +304,24 @@
       <li>Teacher of Coding, Robotics, Web Development, and Data Structures</li>
       <li>I can clone websites and replicate their design and functionality</li>
         </ul>`;
+        document.querySelector('.software-section h2').innerText = 'Available Software';
+
+const softwareCards = document.querySelectorAll('.software-card');
+softwareCards[0].querySelector('h3').innerText = 'School Management System';
+softwareCards[0].querySelector('p').innerText = 'Essential for academic and student management.';
+
+softwareCards[1].querySelector('h3').innerText = 'Adobe Software';
+softwareCards[1].querySelector('p').innerText = 'Photoshop, Illustrator, Premiere Pro, and more.';
+
+softwareCards[2].querySelector('h3').innerText = 'AutoCAD';
+softwareCards[2].querySelector('p').innerText = 'For professional 2D and 3D design.';
+
+softwareCards[3].querySelector('h3').innerText = 'Software on Demand';
+softwareCards[3].querySelector('p').innerText = 'Custom tools and apps as per request.';
+
       document.getElementById('contact').innerHTML = `
         <h3>Contact Me:</h3>
-        <p>📞 +213 665230301</p>
-        <p>📧 <a href="mailto:amgharryad.dz@gmail.com">amgharryad.dz@gmail.com</a></p>`;
+        <p>📧 <a href="mailto:lorydvemir@gmail.com">lorydvemir@gmail.com</a></p>`;
     }
 
     function translateToFrench() {
@@ -302,10 +346,24 @@
 <li>Enseignant en codage, robotique, développement web et structures de données</li>
 <li>Je peux cloner des sites Web et reproduire leur conception et leurs fonctionnalités</li>
         </ul>`;
+        document.querySelector('.software-section h2').innerText = 'Logiciels Disponibles';
+
+const softwareCards = document.querySelectorAll('.software-card');
+softwareCards[0].querySelector('h3').innerText = 'Système de Gestion Scolaire';
+softwareCards[0].querySelector('p').innerText = 'Essentiel pour la gestion académique et des étudiants.';
+
+softwareCards[1].querySelector('h3').innerText = 'Logiciels Adobe';
+softwareCards[1].querySelector('p').innerText = 'Photoshop, Illustrator, Premiere Pro, et plus encore.';
+
+softwareCards[2].querySelector('h3').innerText = 'AutoCAD';
+softwareCards[2].querySelector('p').innerText = 'Pour la conception 2D et 3D professionnelle.';
+
+softwareCards[3].querySelector('h3').innerText = 'Logiciel à la Demande';
+softwareCards[3].querySelector('p').innerText = 'Outils et applications personnalisés sur demande.';
+
       document.getElementById('contact').innerHTML = `
         <h3>Contactez-moi :</h3>
-        <p>📞 +213 665230301</p>
-        <p>📧 <a href="mailto:amgharryad.dz@gmail.com">amgharryad.dz@gmail.com</a></p>`;
+        <p>📧 <a href="mailto:lorydvemir@gmail.com">lorydvemir@gmail.com</a></p>`;
     }
 
     function translateToArabic() {
@@ -329,11 +387,26 @@
 <li>إنشاء مواقع ويب لعرض الأعمال (بورتفوليو)</li>
 <li>تدريس البرمجة، الروبوتات، تطوير الويب وهياكل البيانات</li>
 <li>أستطيع استنساخ مواقع الويب وتكرار تصميمها ووظائفها</li>
+
         </ul>`;
+        document.querySelector('.software-section h2').innerText = 'البرامج المتاحة';
+
+    const softwareCards = document.querySelectorAll('.software-card');
+    softwareCards[0].querySelector('h3').innerText = 'نظام إدارة المدرسة';
+    softwareCards[0].querySelector('p').innerText = 'ضروري للإدارة الأكاديمية وإدارة الطلاب.';
+
+    softwareCards[1].querySelector('h3').innerText = 'برامج أدوبي';
+    softwareCards[1].querySelector('p').innerText = 'فوتوشوب، إليستريتور، بريمير برو والمزيد.';
+
+    softwareCards[2].querySelector('h3').innerText = 'أوتوكاد';
+    softwareCards[2].querySelector('p').innerText = 'للتصميم الاحترافي ثنائي وثلاثي الأبعاد.';
+
+    softwareCards[3].querySelector('h3').innerText = 'برامج حسب الطلب';
+    softwareCards[3].querySelector('p').innerText = 'أدوات وتطبيقات مخصصة حسب الطلب.';
       document.getElementById('contact').innerHTML = `
         <h3>اتصل بي:</h3>
         <p>📞 +213 665230301</p>
-        <p>📧 <a href="mailto:amgharryad.dz@gmail.com">amgharryad.dz@gmail.com</a></p>`;
+        <p>📧 <a href="mailto:lorydvemir@gmail.com">lorydvemir@gmail.com</a></p>`;
     }
   </script>
 </body>
